@@ -1,0 +1,9 @@
+
+1. * operator is known as the de-referencing operator
+
+2. & operator is known as the address operator
+
+3. The Zero value of a pointer is nil
+    Operations on nil pointers will cause a runtime error.
+
+4.

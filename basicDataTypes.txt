@@ -1,0 +1,7 @@
+
+1. Basic types: numbers,strings and booleans
+
+2. Composite types: arrays,structs,pointers,functions,interfaces,slices,maps and channels
+
+-> They type byte is an alias for uint8
+-> The type rune is an alias for int32
