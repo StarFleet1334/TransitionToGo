@@ -27,6 +27,16 @@ func rectangleDefault(x int, y int) (int, int) {
 	return area, circumf
 }
 
+// Here we use shorthand variable in if statement
+func printParity(x int) {
+	if r := x % 2; r == 0 {
+		fmt.Printf("%v is even.\n", x)
+		return
+	}
+	// r is out of scope
+	fmt.Printf("%v is odd.\n", x)
+}
+
 func main() {
 
 	// This is referred to anonymous function

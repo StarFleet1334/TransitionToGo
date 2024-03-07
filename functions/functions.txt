@@ -9,3 +9,7 @@
 4. The _ operator is also known as the blank identifier
 
 5. We can use it to ignore return values during assignment
+
+6. if Statements support shorthand variables.
+    The variable definition precedes the conditional,
+    seperated by a semicolon
