@@ -13,3 +13,13 @@
 6. if Statements support shorthand variables.
     The variable definition precedes the conditional,
     seperated by a semicolon
+
+7. There is no exception type in Go, and error handling/checking is part of the regular
+    program flow
+
+8. Zero value of error type is nil
+
+9. Errors are initialized:
+    a) errors.New("msg")
+    b) fmt.Errorf("msg:",x)
+

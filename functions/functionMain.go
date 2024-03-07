@@ -37,6 +37,30 @@ func printParity(x int) {
 	fmt.Printf("%v is odd.\n", x)
 }
 
+// Here we prompt Error message in case of either of 0
+func area(x int, y int) (*int, error) {
+	if x == 0 || y == 0 {
+		return nil, fmt.Errorf("zero area: [%v,%v]", x, y)
+	}
+	area := x * y
+	return &area, nil
+}
+
+// Here We check errors
+
+func testArea() {
+	x := 2
+	y := 0
+	area, err := area(x, y)
+	if err != nil {
+		// means we got an error
+		fmt.Println("Error:", err)
+		return
+	}
+	fmt.Printf("aread(%v,%v) = %v;\n", x, y, *area)
+
+}
+
 func main() {
 
 	// This is referred to anonymous function
@@ -50,5 +74,7 @@ func main() {
 	fmt.Printf("Before negation: %v\n", x)
 	negate(&x)
 	fmt.Printf("After negation: %v\n", x)
+
+	testArea()
 
 }
