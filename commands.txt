@@ -1,0 +1,6 @@
+
+Useful Commands:
+
+1. go run ... compiles code, creates an executable and runs it
+2. go build ... compiles code and creates an executable
+3. go test ... runs tests, including coverage and benchmarking

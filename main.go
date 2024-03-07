@@ -1,5 +1,9 @@
 package main
 
-func main() {
+import "fmt"
 
+var greeting = "Hello world!"
+
+func main() {
+	fmt.Println("Hello World!")
 }
