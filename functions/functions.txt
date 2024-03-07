@@ -6,3 +6,6 @@
 3. Pointers must be used explicitly for parameters of basic types to be passed by
     reference.
 
+4. The _ operator is also known as the blank identifier
+
+5. We can use it to ignore return values during assignment

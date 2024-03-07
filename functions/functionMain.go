@@ -11,6 +11,22 @@ func negate(x *int) {
 	*x = neg
 }
 
+// Here we use named return values and because of that
+// we just use = operator instead of :=
+func rectangle(x int, y int) (area int, circumf int) {
+	area = x * y
+	circumf = 2 * (x + y)
+	return
+}
+
+// Here we do not use named return values, so we do not do naked return
+// we use := operator and return results as tuple
+func rectangleDefault(x int, y int) (int, int) {
+	area := x * y
+	circumf := 2 * (x + y)
+	return area, circumf
+}
+
 func main() {
 
 	// This is referred to anonymous function
