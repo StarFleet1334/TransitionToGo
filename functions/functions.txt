@@ -1,0 +1,8 @@
+
+1. Unlike java Go functions do not support method overloading
+
+2. However, they do support variadic arguments, which is one way we can achieve flexibility
+
+3. Pointers must be used explicitly for parameters of basic types to be passed by
+    reference.
+
