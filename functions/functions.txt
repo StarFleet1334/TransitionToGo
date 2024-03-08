@@ -23,3 +23,13 @@
     a) errors.New("msg")
     b) fmt.Errorf("msg:",x)
 
+10. Another way to handle unexpected errors is by forcefully exiting using the panic keyword
+
+11. The defer statement is applied before a function call - for example, defer my func()
+
+12. It delays function execution until the surrounding function finishes
+
+13. In the case of multiple deferred functions, they will be executed on a LIFO (last in,first out)
+basis
+
+14. Deferred functions are often used for important cleanup operations.
