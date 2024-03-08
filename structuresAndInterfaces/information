@@ -1,0 +1,15 @@
+
+1. Go's structs allow us to create custom types and group
+   together a collection of fields. They provide a way to integrate
+   state and behavior
+
+2. We can export struct outside of package scope by
+   capitalizing their first initial character.
+
+3. Structs are initialized with the shorthand syntax
+   the struct name, and the field values.
+
+4. dot (.) operator allows both reading and writing to fields.
+
+5. We can omit some fields in the initialization process
+   and they will be set to their type's default value.
