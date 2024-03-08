@@ -1,0 +1,17 @@
+
+
+1. Methods are functions with special receiver arguments
+
+2. The receiver name and type appear in brackets between the
+   func keyword and the name
+
+3. By capitalizing we can export
+
+4. We can read datta from the city receiver by using its
+   declared name
+
+5. Method receiver is the implicit first argument of the
+   function
+
+6. Just like function arguments, we use pointers for changes
+   to persist outside of the function scope.
