@@ -1,0 +1,19 @@
+
+
+1. Interfaces are collections of method signatures
+2. The compiler checks and enforces interface types.
+3. Similar to structs, we define interfaces using the
+    type and interface keywords, for example:
+    type CityTemp interface
+
+4. Structs can implement multiple interfaces.
+   , also can implement more method that its interfaces.
+
+5. Zero value of interface is nil
+
+6. Interfaces are built-in pointer type - unlike structs
+   , they don't need to be explicitly passed
+   by pointer to functions.
+
+7. any type that has method declared in interface
+    can satisy that interface

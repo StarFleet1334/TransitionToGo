@@ -1,0 +1,24 @@
+
+1. Modules are how Go manages dependence
+2. Modules are collections of packages
+3. A new module is created using go mod init
+   import_path - for example, go mod init linkedInLearning/tempService
+
+4. The go mod command should be run in the project
+   root directory
+
+5. go get command will download dependencies
+   specified in the go.mod file
+
+6. Remember that we can only define one package
+   per directory. We will need to structure our
+   project accordingly.
+
+
+7. In Go, each directory is considered its own
+package. Typically, you can name the package any way you'd
+like, but the main package is special in Go. When Go
+sees that a package is named main it knows the package
+should be considered a binary, and should be compiled
+into an executable file, instead of a library designed
+to be used in another program.
