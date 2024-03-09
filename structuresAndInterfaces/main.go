@@ -34,4 +34,8 @@ func main() {
 
 	cal := _interface.SimpleCalculator{}
 	_interface.PerformCalculation(10, 2, cal)
+
+	_interface.PrintAny(42)
+	_interface.PrintAny("Hello")
+	_interface.PrintAny(true)
 }
