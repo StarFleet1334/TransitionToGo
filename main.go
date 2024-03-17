@@ -18,39 +18,40 @@ type Dimensions struct {
 
 type Bird struct {
 	Species     string `json:"birdType"`
-	Description string `json:"What it does"`
+	Description string `json:"What it does,omitempty"`
 }
 
-var bird Bird
-var result map[string]any
-
 func main() {
+	//birdJson := `{"birds":{"pigeon":"likes to perch on rocks","eagle":"bird of prey"`
+	//// Here we validate
+	//if !json.Valid([]byte(birdJson)) {
+	//	fmt.Println("Invalid JSON string:", birdJson)
+	//	return
+	//}
+	// Marshalling is transforming structured data into JSON String
+	// UnMarshalling it parsing raw json data into []byte variables
 
-	// JSON Struct Tags - Custom Field Names
-	birdJson := `{
-				"birdType": "pigeon",
-				"what it does":"likes to perch on rocks"
-				}`
-	err := json.Unmarshal([]byte(birdJson), &bird)
-	if err != nil {
-		fmt.Println("Error occured", err)
-		return
-	}
-	// So using Custom Field Names
-	// We tell our code to which JSON property should our
-	// attribute to be mapped to.
-	fmt.Println(bird)
+	//pigeon := &Bird{
+	//	Species:     "Pigeon",
+	//	Description: "likes to eat seed",
+	//}
+	//
+	//data, _ := json.Marshal(pigeon)
+	//fmt.Println(string(data))
 
-	// Decoding JSON to Maps - Unstructured Data.
-	birdJson1 := `{"birds":{"pigeon":"likes to perch on rocks","eagle":"bird of prey"},"animals":"none"}`
-	err1 := json.Unmarshal([]byte(birdJson1), &result)
-	if err1 != nil {
-		return
-	}
-	birds := result["birds"].(map[string]any)
-	for key, value := range birds {
-		// Each value is an `any` type, that is type asserted as a string
-		fmt.Println(key, value.(string))
+	// Ignoring Empty Fields
+
+	pigeon := &Bird{
+		Species: "Pigeon",
 	}
 
+	data, _ := json.Marshal(pigeon)
+	fmt.Println(string(data))
+
+	// IF we print like this it will print
+	// "what it does": "". say we want to ignore that field
+	// in that case in structured data we should provide property,
+	// omitempty
+	// after that it will only print
+	// "birdType": "Pigeon"
 }
