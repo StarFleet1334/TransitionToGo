@@ -1,5 +1,10 @@
 package main
 
+import (
+	"encoding/json"
+	"fmt"
+)
+
 type Player struct {
 	Name      string
 	Age       int
@@ -12,59 +17,40 @@ type Dimensions struct {
 }
 
 type Bird struct {
-	Species     string
-	Description string
-	Dimensions  Dimensions
+	Species     string `json:"birdType"`
+	Description string `json:"What it does"`
 }
 
-// var player Player
-// var birds []Bird
-//var birds Bird
-//var n int
-//
-//var pi float64
-//var str string
+var bird Bird
+var result map[string]any
 
 func main() {
-	// Two Types of Data, when working with JSON:
-	// 1. Structured Data.
-	// 2. UnStructured Data.
 
-	// Structured data
-	//rawJson := `{"name": "Jax","age": 2400,"abilities": ["Raw-Strength","Fly","Invincibility"]}`
-	//err := json.Unmarshal([]byte(rawJson), &player)
-	//if err != nil {
-	//	return
-	//}
-	//fmt.Printf("Player name: %s\nPlayer age: %d\nPlayer abilities: %q\n", player.Name, player.Age, player.Abilities)
-	//birdJson := `[{"species":"pigeon","description":"likes to perch on rocks"},{"species":"eagle","description":"bird of prey"}]`
-	//err := json.Unmarshal([]byte(birdJson), &birds)
-	//if err != nil {
-	//	return
-	//}
-	//fmt.Printf("Birds : %+v\n", birds)
+	// JSON Struct Tags - Custom Field Names
+	birdJson := `{
+				"birdType": "pigeon",
+				"what it does":"likes to perch on rocks"
+				}`
+	err := json.Unmarshal([]byte(birdJson), &bird)
+	if err != nil {
+		fmt.Println("Error occured", err)
+		return
+	}
+	// So using Custom Field Names
+	// We tell our code to which JSON property should our
+	// attribute to be mapped to.
+	fmt.Println(bird)
 
-	// Nested Objects
-
-	//birdJson := `{"species":"pigeon","description":"likes to perch on rocks", "dimensions":{"height":24,"width":10}}`
-	//err := json.Unmarshal([]byte(birdJson), &birds)
-	//if err != nil {
-	//	return
-	//}
-	//fmt.Println(birds)
-	//
-	//// Primitive Data Types
-	//
-	//numberJson := "3"
-	//floatJson := "3.1414"
-	//stringJson := `"bird"`
-	//
-	//json.Unmarshal([]byte(numberJson), &n)
-	//json.Unmarshal([]byte(floatJson), &pi)
-	//json.Unmarshal([]byte(stringJson), &str)
-	//
-	//fmt.Println(n)
-	//fmt.Println(pi)
-	//fmt.Println(str)
+	// Decoding JSON to Maps - Unstructured Data.
+	birdJson1 := `{"birds":{"pigeon":"likes to perch on rocks","eagle":"bird of prey"},"animals":"none"}`
+	err1 := json.Unmarshal([]byte(birdJson1), &result)
+	if err1 != nil {
+		return
+	}
+	birds := result["birds"].(map[string]any)
+	for key, value := range birds {
+		// Each value is an `any` type, that is type asserted as a string
+		fmt.Println(key, value.(string))
+	}
 
 }
